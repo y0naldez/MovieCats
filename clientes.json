@@ -1,0 +1,52 @@
+[
+    {"dpi": 2654568452521,
+     "nombre_completo": "Oscar Armin",
+     "nombre_usuario": "oscar",
+     "correo": "oscar@gmail.com",
+     "contrasenia": 123,
+     "telefono": 12345
+    },
+    {"dpi": 3054568452521,
+     "nombre_completo": "Alex H",
+     "nombre_usuario": "alex",
+     "correo": "alex@gmail.com",
+     "contrasenia": 1234,
+     "telefono": 123456
+    },
+    {"dpi": 4854568452521,
+     "nombre_completo": "Julian Perez",
+     "nombre_usuario": "juli",
+     "correo": "juli@gmail.com",
+     "contrasenia": 123,
+     "telefono": 12345
+    },
+    {"dpi": 4564568452521,
+     "nombre_completo": "Ana Valeria",
+     "nombre_usuario": "ana",
+     "correo": "ana@gmail.com",
+     "contrasenia": 123,
+     "telefono": 12345
+    },
+    {"dpi": 8744568452521,
+     "nombre_completo": "Daniela Jerez",
+     "nombre_usuario": "dani",
+     "correo": "dani@gmail.com",
+     "contrasenia": 123,
+     "telefono": 12345
+    },
+    {"dpi": 4604568452521,
+     "nombre_completo": "Maria De Los Angeles",
+     "nombre_usuario": "marielos",
+     "correo": "marielos@gmail.com",
+     "contrasenia": 123,
+     "telefono": 12345
+    },
+    {"dpi": 2254568452521,
+     "nombre_completo": "Aston L",
+     "nombre_usuario": "aston",
+     "correo": "aston@gmail.com",
+     "contrasenia": 123,
+     "telefono": 12345
+    }
+   
+]

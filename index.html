@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE CATS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+</head>
+<body>
+    <br></br>
+    <br></br>
+    <div id="login">
+
+        <div class="mx-auto" style="width: 500px;" id="divLoginForm">
+            <form id="formInicioSesion">
+                <div class="mb-3 ">
+                  <label for="exampleInputEmail1" class="form-label">Usuario</label>
+                  <input id="usuario" type="email" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                  <input id="contrasenia" type="password" class="form-control" >
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Administrador</label>
+                </div>
+                <button type="button" onclick="login()" class="btn btn-primary">Iniciar sesión</button>
+            </form>
+        </div>    
+    </div>
+
+    <div id="user">
+
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button type="button" class="btn btn-primary"  data-bs-target="#collapse3" data-bs-toggle="collapse" aria-controls="collapse3" aria-expanded="false">Peliculas</button>
+                <button type="button" class="btn btn-primary"  data-bs-target="#collapse4" data-bs-toggle="collapse" aria-controls="collapse4" aria-expanded="false">Visualizar Actores </button>
+                <button type="button" class="btn btn-primary"  data-bs-target="#collapse5" data-bs-toggle="collapse" aria-controls="collapse5" aria-expanded="false">Visualizar Categorias </button>
+                <button id="cerrarSesion" type="button" class="btn btn-danger" onclick="showDivIniciales();limpiarInicioDeSesion();alert('Sesión cerrada')" >Cerrar sesión</button>
+                
+            </div>
+        </nav>
+
+        <div class="collapse" id="collapse3">
+            
+            <div class="tab-pane fade show active" id="nav-heme" role="tabpanel" aria-labelledby="nav-heme-tab">
+                <div class="p-4">
+                    <button onclick="listaPeliculas.metodoUno()" type="button" class="btn btn-secondary btn-lg btn-block" id="ascendente">Ordenar Ascendente</button>
+                    <button onclick="listaPeliculas.metodoDos() "type="button" class="btn btn-secondary btn-lg btn-block" id="descendente">Ordenar Descendente</button>
+
+                    <div id="pelisDiv" style="display:inline;"></div>
+                    <div class="modal fade" id="ver-paciente" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Pelicula</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="px-2" id="paciente-data">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+
+        <div class="collapse" id="collapse4">
+                <div class="p-4">
+                    <button type="button"  onclick = "graficarInorden()" class="btn btn-secondary btn-lg btn-block" id="inOrden"> In orden</button>
+                    <button type="button" onclick = "graficarPreorden()" class="btn btn-secondary btn-lg btn-block" id="preOrden">Pre orden</button>
+                    <button type="button" onclick = "graficarPostOrden()" class="btn btn-secondary btn-lg btn-block" id="postOrden">Post Orden</button>
+                </div>
+                
+                
+
+                <div id="divActores" class="card text-end" style="width: 18rem;">
+                    
+                </div>
+
+
+        </div>
+
+        <div class="collapse" id="collapse5">
+            
+            <div id="dibujoCategoria" class="row">
+
+            </div>
+            
+        </div>
+
+    </div>
+
+
+
+    <div id="admin">
+       
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button type="button" class="btn btn-primary"  data-bs-target="#collapse1" data-bs-toggle="collapse" aria-controls="collapse1" aria-expanded="false">Usuarios</button>
+                <button type="button" class="btn btn-primary"  data-bs-target="#collapse2" data-bs-toggle="collapse" aria-controls="collapse2" aria-expanded="false">Blockchain</button>
+                <button id="cerrarSesion" type="button" class="btn btn-danger" onclick="showDivIniciales();limpiarInicioDeSesion();alert('Sesión cerrada')" >Cerrar sesión</button>
+            </div>
+        </nav>
+    
+
+        <div class="collapse" id="collapse1">
+            <br></br>
+            
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#carga-peliculas">Carga masiva Peliculas</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#carga-usuarios">Carga masiva Usuarios</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#carga-actores">Carga masiva Actores</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#carga-categorias">Carga masiva Categorias</button>
+            
+            
+            
+            
+
+            <div class="modal fade" id="carga-peliculas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" id="cargaPeliculas">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Carga masiva Peliculas</h5>
+                        </div>
+                        <div class="modal-body">
+                            <label for="exampleFormControlFile1">Json de peliculas</label>
+                            <input type="file" class="form-control-file" id="jsonpeliculas">
+                             
+                        </div>
+                    </div>
+                </div>
+           </div>
+            
+           <div class="modal fade" id="carga-usuarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" id="cargaUsuarios">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Carga masiva usuarios</h5>
+                        </div>
+                        <div class="modal-body">
+                            <label for="exampleFormControlFile1">Json de usuarios</label>
+                            <input type="file" class="form-control-file" id="jsonusuarios">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="carga-actores" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" id="cargaActores">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Carga masiva actores</h5>
+                        </div>
+                        <div class="modal-body">
+                            <label for="exampleFormControlFile1">Json de actores</label>
+                            <input type="file" class="form-control-file" id="jsonactores">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="carga-categorias" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" id="cargaCategorias">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Carga masiva categorias</h5>
+                        </div>
+                        <div class="modal-body">
+                            <label for="exampleFormControlFile1">Json de categorias</label>
+                            <input type="file" class="form-control-file" id="jsoncategorias">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-4" style="display: flex;">
+                <div id="botonesGraficas">
+                        <div class="btn-group-horizontal" role="group"
+                            aria-label="Button group with nested dropdown">
+                            <button onclick="mostrarGrafica1(); peliculasAvl.graficarArbol(peliculasAvl.raiz);" type="button" class="btn btn-primary" id="uno">Gráfico Peliculas</button>
+                            <button onclick="mostrarGrafica2();listaUsuarios.graficarlista();" type="button" class="btn btn-primary" id="dos">Gráfico Clientes</button>
+                            <button onclick="mostrarGrafica3();arbolActores.graficar();" type="button" class="btn btn-primary" id="tres">Gráfico Actores</button>
+                            <button onclick="mostrarGrafica4();tablaCategoria.graficartabla();" type="button" class="btn btn-primary" id="cuatro">Gráfico Categorias</button>
+                            
+                            <br></br>
+                            <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
+                                <button onclick="capturarPeliculas()" type="button" class="btn btn-success" id="descargarUno">Captura gráfico Peliculas</button>
+                                <button onclick="capturarClientes()" type="button" class="btn btn-success" id="descargarDos">Captura gráfico Clientes</button>
+                                <button onclick="capturarActores()" type="button" class="btn btn-success" id="descargarTres">Captura gráfico Actores</button>
+                                <button onclick="capturarCategorias()" type="button" class="btn btn-success" id="descargarCuatro">Captura gráfico Categorias</button>      
+                                         
+                            </div>
+
+
+                            
+                                
+                                
+                           
+
+                        </div>
+
+                        
+                   
+                </div>
+
+            
+                            
+                   
+
+                        <div class="row text-center" id="grafica1">
+                            <div id="lienzoAVL"></div>
+                        </div>
+                        
+                    
+
+
+                        <div class="row text-center" id="grafica2">
+                            <div id="lienzoListaUsuarios"></div>
+                        </div>
+
+                        <div class="row text-center" id="grafica3">
+                            <div id="lienzoBinarioActores"></div>
+                        </div>
+
+                        <div class="row text-center" id="grafica4">
+                            <div id="lienzoTablaCategoria"></div>
+                        </div>
+
+
+                  
+                    
+                
+
+            </div>
+
+            
+
+
+            
+        </div>
+
+        <div class="collapse" id="collapse2">
+            
+
+            <button onclick="graficarBlockchain()" type="button" class="btn btn-secondary btn-lg btn-block" id="terminarBlock">Mostrar Compras</button>
+            <button onclick="minarAhora()" type="button" class="btn btn-secondary btn-lg btn-block" id="terminarBlock">Minar un bloque</button>
+            <input id="miliS">Milisegundos</input>
+            <button onclick="cambiarIntervalo()" type="button" class="btn btn-secondary btn-lg btn-block" id="terminarBlock">Cambiar tiempo de minado</button>
+            <div id="divBlock"></div>
+        
+        </div>
+
+    </div>
+
+
+    <div id="apartadoImagenes">
+        <br></br>
+        <div>
+            <button class="btn btn-primary" id="btnCapturar">CAPTURAR PELICULAS</button>
+            <button class="btn btn-success" onclick="download_image()" id="btnDescargar">DESCARGAR PELICULAS</button>
+        </div>
+        <br></br>
+        <div>
+            <button class="btn btn-primary" id="btnCapturar2">CAPTURAR CLIENTES</button>
+            <button class="btn btn-success" onclick="download_image2()" id="btnDescargar">DESCARGAR CLIENTES</button>
+        </div>
+        <br></br>
+        <div>
+            <button class="btn btn-primary" id="btnCapturar3">CAPTURAR ACTORES</button>
+            <button class="btn btn-success" onclick="download_image3()" id="btnDescargar">DESCARGAR ACTORES</button>
+
+        </div>
+        <br></br>
+        <div>
+            <button class="btn btn-primary" id="btnCapturar4">CAPTURAR CATEGORIAS</button>
+            <button class="btn btn-success" onclick="download_image4()" id="btnDescargar">DESCARGAR CATEGORIAS</button>
+        </div>
+    </div>
+        
+    
+        <div id="screen"></div>
+        <div id="screen2"></div>
+        <div id="screen3"></div>
+        <div id="screen4"></div>
+
+
+        
+        
+        
+        
+        
+    
+    
+    
+
+    
+
+    
+    <script src="//d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
+    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/crypto-js@3.1.9-1/crypto-js.js"></script>
+    <script> src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    
+ 
+
+</body>
+</html>

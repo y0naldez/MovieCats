@@ -1,0 +1,53 @@
+[
+
+    {
+        "id_pelicula": 1,
+        "nombre_pelicula": "Toy Story",
+        "description": "es una pelicula sdasdasd",
+        "puntuacion_star": 3,
+        "precion_Q": 75,
+        "paginas": 170,
+        "categoria": "Animacion"
+
+    },
+    {
+        "id_pelicula": 3,
+        "nombre_pelicula": "Tierra de osos",
+        "description": "es una pelicula de osos",
+        "puntuacion_star": 4,
+        "precion_Q": 85,
+        "paginas": 120,
+        "categoria": "Animacion"
+
+    },
+    {
+        "id_pelicula": 2,
+        "nombre_pelicula": "Iroman 2",
+        "description": "es una pelicula sbbb",
+        "puntuacion_star": 5,
+        "precion_Q": 90,
+        "paginas": 200,
+        "categoria": "Accion"
+
+    },
+    {
+        "id_pelicula": 5,
+        "nombre_pelicula": "Los juegos del hambre",
+        "description": "es una pelicula sccc",
+        "puntuacion_star": 2,
+        "precion_Q": 45,
+        "paginas": 100,
+        "categoria": "Aventura"
+
+    },    {
+        "id_pelicula": 11,
+        "nombre_pelicula": "Portal",
+        "description": "es una pelicula  ppp",
+        "puntuacion_star": 4,
+        "precion_Q": 50,
+        "paginas": 240,
+        "categoria": "Thriller"
+
+    }
+
+]

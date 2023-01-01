@@ -1,0 +1,38 @@
+[
+    {"dni": 135,
+     "nombre_actor": "Mark K",
+     "correo": "mark@gmail.com",
+     "descripcion": "amet"
+    },
+    {"dni": 10,
+     "nombre_actor": "Alex Suarez",
+     "correo": "alexx@gmail.com",
+     "descripcion": "comodo"
+    },
+    {"dni": 150,
+     "nombre_actor": "Julian Alvarez",
+     "correo": "julis@gmail.com",
+     "descripcion": "labore"
+    },
+    {"dni": 45,
+     "nombre_actor": "Valery J",
+     "correo": "valery@gmail.com",
+     "descripcion": 12345
+    },
+    {"dni": 15,
+     "nombre_actor": "Karla T",
+     "correo": "karla@gmail.com",
+     "descripcion": "labore"
+    },
+    {"dni": 95,
+     "nombre_actor": "Martin Mark",
+     "correo": "martin@gmail.com",
+     "descripcion": "comodo"
+    },
+    {"dni": 88,
+     "nombre_actor": "Amanda Cerni",
+     "correo": "cerni@gmail.com",
+     "descripcion": "labore"
+    }
+   
+]
